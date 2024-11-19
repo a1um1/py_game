@@ -53,11 +53,9 @@ class Maze:
         
   def ft_display(self):
     line_buffer = []
-    
     for x in list(range(self.rows)):
       line_buffer.append([WALL_CELL for _ in range(self.cols* 2)])
       line_buffer.append([WALL_CELL for _ in range(self.cols* 2)])
-      
     for x in list(range(self.rows)):
       for y in list(range(self.cols)):
         (nx, ny) = (x * 2, y * 2)

@@ -7,7 +7,7 @@ current = os.path.dirname(os.path.realpath(__file__))
 parent = os.path.dirname(current)
 sys.path.append(parent)
 # https://www.geeksforgeeks.org/python-import-from-parent-directory/
-# import from parent directory
+
 from function import ft_atoi, ft_getInputInt
 
 class TestInputMethod(unittest.TestCase):
