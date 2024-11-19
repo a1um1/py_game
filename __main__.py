@@ -1,4 +1,3 @@
-import os
 from game import Maze
 import sys
 from constant import KEYCODE_DIRECTION, PLAYER_CELL, EXIT_CELL, RESET
@@ -22,15 +21,14 @@ if len(sys.argv) > 3:
 maze = Maze(size_y, size_x, seed)
 maze.ft_generate()
 while True:
-  os.system('clear')
-  print("Move count :", maze.moveCount, PLAYER_CELL, "Player", RESET, EXIT_CELL, "Exit",RESET)
   maze.ft_display()
-  print("Start playing by moving with ( W, A, S, D ) Or to quit press ( Q )")
-  key = str(readchar.readkey()).lower()
-  if key in KEYCODE_DIRECTION:
-   if maze.ft_moveplayer(KEYCODE_DIRECTION[key]):
-     break
-  elif key == 'q':
-    print("\n You quit the game")
-    exit(0)
+  while True:
+    key = str(readchar.readkey()).lower()
+    if key in KEYCODE_DIRECTION:
+      if maze.ft_moveplayer(KEYCODE_DIRECTION[key]):
+        exit(0)
+      break
+    elif key == 'q':
+      print("\n You quit the game")
+      exit(0)
   

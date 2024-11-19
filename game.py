@@ -1,6 +1,7 @@
 from constant import UP, DOWN, LEFT, RIGHT, MOVE_INSTRUCTION, OPPOSITE, WALL_CELL, EXIT_CELL, PLAYER_CELL, EMPTY_CELL, RESET
 import random
 import time
+import os
 class Maze:
   def __init__(self, rows, cols, seed = None):
     self.rows = rows
@@ -52,6 +53,7 @@ class Maze:
         
   def ft_display(self):
     line_buffer = []
+    
     for x in list(range(self.rows)):
       line_buffer.append([WALL_CELL for _ in range(self.cols* 2)])
       line_buffer.append([WALL_CELL for _ in range(self.cols* 2)])
@@ -71,11 +73,14 @@ class Maze:
           
     line_buffer[self.exitPoint[0] * 2][self.exitPoint[1] * 2] = EXIT_CELL
     line_buffer[self.player[0] * 2][self.player[1] * 2] = PLAYER_CELL
-    
+    os.system('clear')
+    print("Move count :", self.moveCount, PLAYER_CELL, "Player", RESET, EXIT_CELL, "Exit",RESET)
     print(WALL_CELL * ((self.cols * 2) + 1))
     for line in line_buffer:
       print(WALL_CELL, ''.join(line), sep='')
     print(RESET)
+    print("Start playing by moving with ( W, A, S, D ) Or to quit press ( Q )")
+
       
   def ft_moveplayer(self, method):
     current_position = self.grid[self.player[0]][self.player[1]]
