@@ -1,5 +1,5 @@
 # PY-MAZE
-DPU Final Project
+DPU Final 1sy year Project
 ```
 # Install
 python -m pip install -r requirements.txt
