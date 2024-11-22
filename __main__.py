@@ -1,6 +1,6 @@
 from game import Maze
 import sys
-from constant import KEYCODE_DIRECTION, PLAYER_CELL, EXIT_CELL, RESET
+from constant import KEYCODE_DIRECTION
 import readchar
 from function import ft_getInputInt, ft_atoi
 
