@@ -8,7 +8,12 @@ sys.setrecursionlimit(10**6)
 
 from function import ft_getInputInt, ft_atoi
 
-def get_maze_dimensions():
+def ft_get_maze_dimensions():
+  """ function ft_get_maze_dimensions รับค่าความกว้างและความสูงของวงกต
+
+  Returns:
+      (int, int): ความกว้างและความสูงของวงกต
+  """
   argc = len(sys.argv)
   if argc > 1 and ft_atoi(sys.argv[1]) is not None:
     size_x = ft_atoi(sys.argv[1])
@@ -18,11 +23,16 @@ def get_maze_dimensions():
     size_y = ft_getInputInt("Enter height of the Maze : ")
   return size_x, size_y
 
-def get_seed():
+def ft_get_seed():
+  """
+    function ft_get_seed รับค่า seed จาก command line
+    Returns:
+        any, none: ค่า seed ถ้ามี และ None ถ้าไม่มี
+  """
   return sys.argv[3] if len(sys.argv) > 3 else None
 
-size_x, size_y = get_maze_dimensions()
-seed = get_seed()
+size_x, size_y = ft_get_maze_dimensions()
+seed = ft_get_seed()
 maze = Maze(size_y, size_x, seed)
 maze.ft_generate()
 while True:

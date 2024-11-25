@@ -24,11 +24,11 @@ OPPOSITE = {
   RIGHT: LEFT,
 }
 
+RESET = "\x1b[0m"
 WALL_CELL = "\033[1;36m██"
 PLAYER_CELL = "\033[1;32m██"
 EXIT_CELL = "\x1b[31m██"
-EMPTY_CELL = "\x1b[48;5;238m  "
-RESET = "\x1b[0m"
+EMPTY_CELL = "  "
 
 KEYCODE_DIRECTION = {
   'w': UP,
