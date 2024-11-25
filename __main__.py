@@ -4,8 +4,7 @@ from constant import KEYCODE_DIRECTION
 import readchar
 
 import sys
-
-# sys.setrecursionlimit(10**6)
+sys.setrecursionlimit(10**6)
 
 from function import ft_getInputInt, ft_atoi
 
