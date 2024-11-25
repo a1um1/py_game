@@ -1,7 +1,6 @@
 import unittest
 import sys
 import os
-from unittest import mock
 
 current = os.path.dirname(os.path.realpath(__file__))
 parent = os.path.dirname(current)
