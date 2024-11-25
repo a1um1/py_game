@@ -60,14 +60,10 @@ class Maze:
       for y in list(range(self.cols)):
         (nx, ny) = (x * 2, y * 2)
         line_buffer[nx][ny] = "  "
-        if not self.grid[x][y]['walls'][RIGHT]:
-          line_buffer[nx][ny + MOVE_INSTRUCTION[RIGHT][1]] = EMPTY_CELL
-        if not self.grid[x][y]['walls'][LEFT]:
-          line_buffer[nx][ny + MOVE_INSTRUCTION[LEFT][1]] = EMPTY_CELL
-        if not self.grid[x][y]['walls'][UP]:
-          line_buffer[nx + MOVE_INSTRUCTION[UP][0]][ny] = EMPTY_CELL
-        if not self.grid[x][y]['walls'][DOWN]:
-          line_buffer[nx + MOVE_INSTRUCTION[DOWN][0]][ny] = EMPTY_CELL
+        for direction in (RIGHT, LEFT, UP, DOWN):
+          if not self.grid[x][y]['walls'][direction]:
+            nx_offset, ny_offset = MOVE_INSTRUCTION[direction]
+            line_buffer[nx + nx_offset][ny + ny_offset] = EMPTY_CELL
           
     line_buffer[self.exitPoint[0] * 2][self.exitPoint[1] * 2] = EXIT_CELL
     line_buffer[self.player[0] * 2][self.player[1] * 2] = PLAYER_CELL
@@ -79,7 +75,6 @@ class Maze:
     print(RESET)
     print("Start playing by moving with ( W, A, S, D ) Or to quit press ( Q )")
 
-      
   def ft_moveplayer(self, method):
     current_position = self.grid[self.player[0]][self.player[1]]
     if method in [UP, DOWN, LEFT, RIGHT]:
