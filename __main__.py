@@ -2,6 +2,11 @@ from game import Maze
 import sys
 from constant import KEYCODE_DIRECTION
 import readchar
+
+import sys
+
+# sys.setrecursionlimit(10**6)
+
 from function import ft_getInputInt, ft_atoi
 
 def get_maze_dimensions():
