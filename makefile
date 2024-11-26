@@ -5,5 +5,5 @@ run:
 
 # https://github.com/CleanCut/green
 test:
-	green -vv tests/*.py
+	green -vv test_*.py
 	
